@@ -1,5 +1,6 @@
 package com.example.roommate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
         import android.content.Intent;
@@ -7,38 +8,73 @@ import androidx.appcompat.app.AppCompatActivity;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-    private EditText et_id,et_pass;
-    private Button btn_login,btn_register;
+public class LoginActivity extends AppCompatActivity
+{
+
+    private FirebaseAuth mFirebaseAuth;         // 파이어베이스 인증처리
+    private DatabaseReference mDatabaseRef;     // 실시간 데이터베이스
+    private EditText mEtEmail, mEtPwd;             // 로그인 입력필드
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Roommate");
 
-        et_id=findViewById(R.id.et_id);
-        et_pass=findViewById(R.id.et_pass);
-        btn_login=findViewById(R.id.btn_login);
-        btn_register=findViewById(R.id.btn_register);
+        mEtEmail = findViewById(R.id.et_email);
+        mEtPwd = findViewById(R.id.et_pwd);
 
-        Button btn_register = (Button) findViewById(R.id.btn_register);
-        btn_register.setOnClickListener(new View.OnClickListener(){
 
+
+        Button btn_login = findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
+                //로그인 요청
+                String strEmail = mEtEmail.getText().toString();
+                String strPwd = mEtPwd.getText().toString();
+
+                mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if(task.isSuccessful()){
+                            //로그인 성공
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();//현재 액티비티 파괴
+                        }else{
+                            Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
-        });
 
+        }
+        );
 
-        btn_register.setOnClickListener((new View.OnClickListener() {
+        Button btn_register = (Button) findViewById(R.id.btn_register);
+        btn_register.setOnClickListener((new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+            public void onClick(View view)
+            {
+                //회원가입 화면으로 이동
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         }));
