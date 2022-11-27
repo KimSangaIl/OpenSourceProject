@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "158811423829",
-    "project_id": "roommate-11683",
-    "storage_bucket": "roommate-11683.appspot.com"
+    "project_number": "38699367928",
+    "project_id": "roommate-1",
+    "storage_bucket": "roommate-1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:158811423829:android:5813d2bd0efe5a09c540dc",
+        "mobilesdk_app_id": "1:38699367928:android:2fc5d92102f1ad5c506a0d",
         "android_client_info": {
           "package_name": "com.example.roommate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "158811423829-h90pq1u7uh0vh047r7qm68g8oahjmgq8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.roommate",
-            "certificate_hash": "61b2342af1c9149e7d19ffb09e1f11dcc6822134"
-          }
-        },
-        {
-          "client_id": "158811423829-vt7lss11h1ge3k5215jb00r482g335mj.apps.googleusercontent.com",
+          "client_id": "38699367928-unb6n611j7pm2lj8upfq38oianbc365n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC5j1RkMBRxd4Zd8usin8bL-Bo0hS7i1tA"
+          "current_key": "AIzaSyA1bdy0vgLv4PweYVXz3n-CDP0jkmoXJwQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "158811423829-vt7lss11h1ge3k5215jb00r482g335mj.apps.googleusercontent.com",
+              "client_id": "38699367928-unb6n611j7pm2lj8upfq38oianbc365n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
