@@ -49,20 +49,26 @@ public class LoginActivity extends AppCompatActivity
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
 
-                mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                //빈칸이 있을시 Toast메세지를 출력
+                if(mEtEmail.getText().toString().length() == 0 || mEtPwd.toString().length() == 0) {
+                    Toast.makeText(LoginActivity.this, "ID, 비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if(task.isSuccessful()){
-                            //로그인 성공
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();//현재 액티비티 파괴
-                        }else{
-                            Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                            if (task.isSuccessful()) {
+                                //로그인 성공
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();//현재 액티비티 파괴
+                            } else {
+                                Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
 
         }
