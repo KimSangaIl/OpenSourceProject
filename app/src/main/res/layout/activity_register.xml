@@ -61,10 +61,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:textColor="@color/black"
         android:text="선택항목"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/et_age"
         app:layout_constraintTop_toTopOf="@+id/et_age" />
 
@@ -74,33 +75,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:ems="10"
-        android:hint="생년월일"
+        android:hint="나이"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/et_name"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="12dp"
-        android:text="남"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/et_age" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="53dp"
         android:text="성별"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_age" />
@@ -116,18 +108,34 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
+    <RadioGroup
+        android:id="@+id/rg_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="4dp"
-        android:text="여"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/et_age"
-        app:layout_constraintTop_toBottomOf="@+id/et_age"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/et_age">
+
+        <RadioButton
+            android:id="@+id/rb_man"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingRight="60sp"
+            android:text="남자" />
+
+        <RadioButton
+            android:id="@+id/rb_woman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="여자" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
