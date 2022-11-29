@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,10 +23,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private FirebaseAuth mFirebaseAuth;         // 파이어베이스 인증처리
-    private DatabaseReference mDatabaseRef;     // 실시간 데이터베이스
-    private EditText mEtEmail, mEtPwd;             // 회원가입 입력필드
-    private Button mBtnRegister;                // 회원가입 버튼
+    private FirebaseAuth mFirebaseAuth;                 // 파이어베이스 인증처리
+    private DatabaseReference mDatabaseRef;             // 실시간 데이터베이스
+    private EditText mEtEmail, mEtPwd, mEtName, mEtAge; // 회원가입 입력필드
+    private Button mBtnRegister;                        // 회원가입 버튼
+    private RadioGroup rb_gender;                       // 성별 그룹
+    private RadioButton rb_man, rb_woman;               // 남성, 여성
+    private String str_result;                          // 성별값 저장
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +43,35 @@ public class RegisterActivity extends AppCompatActivity {
         mEtEmail = findViewById(R.id.et_email);
         mEtPwd = findViewById(R.id.et_pwd);
         mBtnRegister = findViewById(R.id.btn_register);
+        mEtName = findViewById(R.id.et_name);
+        mEtAge = findViewById(R.id.et_age);
+        rb_gender = findViewById(R.id.rg_gender);
+        rb_man = findViewById(R.id.rb_man);
+        rb_woman = findViewById(R.id.rb_woman);
+
+        rb_gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {//라디오 버튼들의 상태 값의 변경을 감지
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i == R.id.rb_man) {
+                    str_result = rb_man.getText().toString(); // 라디오 버튼의 text(남자)값을 String에 저장
+                }else if(i == R.id.rb_woman){
+                    str_result = rb_woman.getText().toString(); // 라디오 버튼의 text(여자)값을 String에 저장
+                }
+            }
+        });
 
         mBtnRegister.setOnClickListener(new View.OnClickListener()
         {
+
             @Override
             public void onClick(View view)
             {
                 //회원가입 처리 시작
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
+                String strName = mEtName.getText().toString();
+                String strAge = mEtAge.getText().toString();
+                String strGen = str_result.toString();
 
                 //Firebase Auth 진행
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -58,6 +84,9 @@ public class RegisterActivity extends AppCompatActivity {
                             account.setIdToken(firebaseUser.getUid());
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPwd);
+                            account.setName(strName);
+                            account.setAge((strAge));
+                            account.setGen(strGen);
 
 
                             //setValue : DB에 insert
