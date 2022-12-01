@@ -101,6 +101,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
                                 Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(RegisterActivity.this, QuestionActivity.class);
+                                startActivity(intent);
                                 finish();//현재 액티비티 파괴
                             } else {
                                 Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다", Toast.LENGTH_SHORT).show();
