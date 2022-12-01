@@ -9,6 +9,18 @@ public class UserAccount {
     private String Name; //이름
     private String Age; //나이
     private String Gen; //성별
+    private String Wakeup;// 기상시간
+    private String Sleep;
+    private String Floor;
+    private String Exam;
+    private String Shower;
+    private String WhenShower;
+    private String Warm;
+    private String Cold;
+    private String Study;
+    private String Home;
+    private String Alcohol;
+
 
     public UserAccount() { }//빈 생성자 만들기
 
@@ -61,5 +73,93 @@ public class UserAccount {
 
     public void setGen(String gen) {
         Gen = gen;
+    }
+
+    public String getWakeup() {
+        return Wakeup;
+    }
+
+    public void setWakeup(String wakeup) {
+        Wakeup = wakeup;
+    }
+
+    public String getSleep() {
+        return Sleep;
+    }
+
+    public void setSleep(String sleep) {
+        Sleep = sleep;
+    }
+
+    public String getFloor() {
+        return Floor;
+    }
+
+    public void setFloor(String floor) {
+        Floor = floor;
+    }
+
+    public String getExam() {
+        return Exam;
+    }
+
+    public void setExam(String exam) {
+        Exam = exam;
+    }
+
+    public String getShower() {
+        return Shower;
+    }
+
+    public void setShower(String shower) {
+        Shower = shower;
+    }
+
+    public String getWhenShower() {
+        return WhenShower;
+    }
+
+    public void setWhenShower(String whenShower) {
+        WhenShower = whenShower;
+    }
+
+    public String getWarm() {
+        return Warm;
+    }
+
+    public void setWarm(String warm) {
+        Warm = warm;
+    }
+
+    public String getCold() {
+        return Cold;
+    }
+
+    public void setCold(String cold) {
+        Cold = cold;
+    }
+
+    public String getStudy() {
+        return Study;
+    }
+
+    public void setStudy(String study) {
+        Study = study;
+    }
+
+    public String getHome() {
+        return Home;
+    }
+
+    public void setHome(String home) {
+        Home = home;
+    }
+
+    public String getAlcohol() {
+        return Alcohol;
+    }
+
+    public void setAlcohol(String alcohol) {
+        Alcohol = alcohol;
     }
 }

@@ -97,6 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <RadioGroup
+        android:id="@+id/smoking"
         android:layout_width="199dp"
         android:layout_height="24dp"
         android:gravity="center"
@@ -105,14 +106,14 @@
         tools:layout_editor_absoluteY="56dp">
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/yesSmoke"
             android:layout_width="119dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="흡연" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/noSmoke"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -128,13 +129,13 @@
         tools:layout_editor_absoluteY="80dp">
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/yesExercise"
             android:layout_width="124dp"
             android:layout_height="match_parent"
             android:text="함" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/noExercise"
             android:layout_width="83dp"
             android:layout_height="25dp"
             android:text="안함" />
@@ -151,20 +152,20 @@
         app:layout_constraintTop_toBottomOf="@+id/exercise">
 
         <RadioButton
-            android:id="@+id/radioButton10"
+            android:id="@+id/yesClean"
             android:layout_width="123dp"
             android:layout_height="23dp"
             android:text="함" />
 
         <RadioButton
-            android:id="@+id/radioButton9"
+            android:id="@+id/noClean"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="안함" />
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/eatin"
+        android:id="@+id/eatIn"
         android:layout_width="206dp"
         android:layout_height="24dp"
         android:orientation="horizontal"
@@ -173,20 +174,20 @@
         tools:ignore="MissingConstraints">
 
         <RadioButton
-            android:id="@+id/radioButton11"
+            android:id="@+id/yesEatIn"
             android:layout_width="124dp"
             android:layout_height="match_parent"
             android:text="함" />
 
         <RadioButton
-            android:id="@+id/radioButton25"
+            android:id="@+id/noEatIn"
             android:layout_width="88dp"
             android:layout_height="24dp"
             android:text="안함" />
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/sleephab"
+        android:id="@+id/sleepHab"
         android:layout_width="206dp"
         android:layout_height="24dp"
         android:orientation="horizontal"
@@ -194,13 +195,13 @@
         tools:layout_editor_absoluteY="154dp" >
 
         <RadioButton
-            android:id="@+id/radioButton26"
+            android:id="@+id/yesSleepHap"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="있음" />
 
         <RadioButton
-            android:id="@+id/radioButton27"
+            android:id="@+id/noSleepHap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="없음" />
@@ -215,14 +216,14 @@
         tools:layout_editor_absoluteY="178dp">
 
         <RadioButton
-            android:id="@+id/radioButton30"
+            android:id="@+id/yesGame"
             android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="함" />
 
         <RadioButton
-            android:id="@+id/radioButton31"
+            android:id="@+id/noGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -230,7 +231,7 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/alchol"
+        android:id="@+id/alcohol"
         android:layout_width="206dp"
         android:layout_height="24dp"
         android:orientation="horizontal"
@@ -238,14 +239,14 @@
         tools:layout_editor_absoluteY="202dp" >
 
         <RadioButton
-            android:id="@+id/radioButton32"
+            android:id="@+id/yesAlcohol"
             android:layout_width="103dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="함" />
 
         <RadioButton
-            android:id="@+id/radioButton33"
+            android:id="@+id/noAlcohol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -353,7 +354,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <Button
-        android:id="@+id/btn_endreg"
+        android:id="@+id/btn_endReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입 하기"
@@ -402,20 +403,20 @@
         app:layout_constraintTop_toBottomOf="@+id/spi_floor" />
 
     <Spinner
-        android:id="@+id/gohome"
+        android:id="@+id/goHome"
         android:layout_width="113dp"
         android:layout_height="22dp"
-        android:entries="@array/gohome"
+        android:entries="@array/goHome"
         app:layout_constraintTop_toBottomOf="@+id/study_place"
         tools:layout_editor_absoluteX="237dp" />
 
     <Spinner
-        android:id="@+id/alcperiod"
+        android:id="@+id/alcPeriod"
         android:layout_width="150dp"
         android:layout_height="22dp"
-        android:entries="@array/alcperiod"
-        app:layout_constraintStart_toStartOf="@+id/gohome"
-        app:layout_constraintTop_toBottomOf="@+id/gohome" />
+        android:entries="@array/alcPeriod"
+        app:layout_constraintStart_toStartOf="@+id/goHome"
+        app:layout_constraintTop_toBottomOf="@+id/goHome" />
 
     <RadioGroup
         android:id="@+id/when_shower"
@@ -426,13 +427,13 @@
         tools:layout_editor_absoluteY="377dp">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/morningShower"
             android:layout_width="92dp"
             android:layout_height="wrap_content"
             android:text="아침" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/eveningShower"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="저녁" />
@@ -447,19 +448,19 @@
         tools:layout_editor_absoluteY="406dp">
 
         <RadioButton
-            android:id="@+id/radioButton12"
+            android:id="@+id/yesHot"
             android:layout_width="84dp"
             android:layout_height="wrap_content"
             android:text="많이 탐" />
 
         <RadioButton
-            android:id="@+id/radioButton13"
+            android:id="@+id/middleHot"
             android:layout_width="73dp"
             android:layout_height="wrap_content"
             android:text="보통" />
 
         <RadioButton
-            android:id="@+id/radioButton14"
+            android:id="@+id/noHot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="잘 안탐" />
@@ -474,19 +475,19 @@
         app:layout_constraintTop_toBottomOf="@+id/hot" >
 
         <RadioButton
-            android:id="@+id/radioButton15"
+            android:id="@+id/yesCold"
             android:layout_width="84dp"
             android:layout_height="wrap_content"
             android:text="많이 탐" />
 
         <RadioButton
-            android:id="@+id/radioButton16"
+            android:id="@+id/middleCold"
             android:layout_width="74dp"
             android:layout_height="wrap_content"
             android:text="보통" />
 
         <RadioButton
-            android:id="@+id/radioButton17"
+            android:id="@+id/noCold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="잘 안탐" />
@@ -502,13 +503,13 @@
         app:layout_constraintTop_toBottomOf="@+id/cold">
 
         <RadioButton
-            android:id="@+id/radioButton18"
+            android:id="@+id/dormitory"
             android:layout_width="127dp"
             android:layout_height="wrap_content"
             android:text="기숙사" />
 
         <RadioButton
-            android:id="@+id/radioButton19"
+            android:id="@+id/etcDormitory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="그 외 장소" />

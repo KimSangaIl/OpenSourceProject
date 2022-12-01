@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="gohome">
+    <string-array name="goHome">
         <item>1주</item>
         <item>2주</item>
         <item>3주</item>
