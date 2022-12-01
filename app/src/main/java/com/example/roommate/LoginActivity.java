@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
         import android.content.Intent;
         import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
@@ -60,7 +59,7 @@ public class LoginActivity extends AppCompatActivity    //커밋 주석
 
                             if (task.isSuccessful()) {
                                 //로그인 성공
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, Main_page.class);
                                 startActivity(intent);
                                 finish();//현재 액티비티 파괴
                             } else {
