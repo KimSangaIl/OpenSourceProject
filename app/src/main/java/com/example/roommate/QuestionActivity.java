@@ -10,11 +10,20 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class QuestionActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;                                             // 파이어베이스 인증처리
@@ -285,12 +294,13 @@ public class QuestionActivity extends AppCompatActivity {
                     String strGoHome = str_goHome.toString();
                     String strAlcPeriod = str_alcPeriod.toString();
 
+
+                            Toast.makeText(QuestionActivity.this, "회원가입에 성공하셨습니다", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(QuestionActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();//현재 액티비티 파괴
                 }
 
-
-                Intent intent=new Intent(QuestionActivity.this,LoginActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
     }
