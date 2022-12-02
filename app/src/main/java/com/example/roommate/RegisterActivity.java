@@ -1,18 +1,16 @@
 package com.example.roommate;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -54,26 +52,23 @@ public class RegisterActivity extends AppCompatActivity {
         rb_gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {//라디오 버튼들의 상태 값의 변경을 감지
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i == R.id.rb_man) {
+                if (i == R.id.rb_man) {
                     str_result = rb_man.getText().toString(); // 라디오 버튼의 text(남자)값을 String에 저장
-                }else if(i == R.id.rb_woman){
+                } else if (i == R.id.rb_woman) {
                     str_result = rb_woman.getText().toString(); // 라디오 버튼의 text(여자)값을 String에 저장
                 }
             }
         });
 
 
-        mBtnRegister.setOnClickListener(new View.OnClickListener()
-        {
+        mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 //빈칸이 하나라도 있을 시 Toast메세지 출력
-                if(mEtEmail.getText().toString().length() == 0 || mEtPwd.toString().length() == 0 ||
+                if (mEtEmail.getText().toString().length() == 0 || mEtPwd.toString().length() == 0 ||
                         mEtName.getText().toString().length() == 0 || str_result.toString().length() == 0) {
                     Toast.makeText(RegisterActivity.this, "빈칸을 입력해 주십시오", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     //회원가입 처리 시작
                     String strEmail = mEtEmail.getText().toString();
                     String strPwd = mEtPwd.getText().toString();
@@ -95,6 +90,25 @@ public class RegisterActivity extends AppCompatActivity {
                                 account.setName(strName);
                                 account.setAge((strAge));
                                 account.setGen(strGen);
+                                account.setAlcohol("");
+                                account.setHome("");
+                                account.setStudy("");
+                                account.setCold("");
+                                account.setWarm("");
+                                account.setWhenShower("");
+                                account.setShower("");
+                                account.setExam("");
+                                account.setFloor("");
+                                account.setSleep("");
+                                account.setWakeup("");//
+                                account.setAlcPeriod("");//음주빈도
+                                account.setGame("");//게임
+                                account.setDorm("");//기숙사
+                                account.setSleepHap("");//잠버릇
+                                account.setSmoke("");//흡연
+                                account.setExercise("");//운동
+                                account.setClean("");//청소
+                                account.setEatIn("");//실내취식
 
 
                                 //setValue : DB에 insert
