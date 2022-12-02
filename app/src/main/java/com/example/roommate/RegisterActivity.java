@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity{
 
     private FirebaseAuth mFirebaseAuth;                 // 파이어베이스 인증처리
     private DatabaseReference mDatabaseRef;             // 실시간 데이터베이스
