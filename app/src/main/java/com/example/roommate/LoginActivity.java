@@ -1,6 +1,7 @@
 package com.example.roommate;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
         import android.content.Intent;
@@ -30,6 +31,10 @@ public class LoginActivity extends AppCompatActivity{
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        
+        // 타이틀 바 숨기기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Roommate");
