@@ -1,6 +1,8 @@
 package com.example.roommate;
 
 import static androidx.databinding.DataBindingUtil.setContentView;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
@@ -14,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class matching_page extends Fragment {
+public class matching_page extends AppCompatActivity {
 
     @Nullable
     @Override
