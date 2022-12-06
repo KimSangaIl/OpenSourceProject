@@ -35,27 +35,27 @@
     <TextView
         android:layout_width="350dp"
         android:layout_height="70dp"
-        android:text="   게시판으로 이동합니다."
+        android:text="   매칭 페이지로ㅁㅋ 이동합니다."
         android:textSize="20dp"
         android:gravity="center_vertical"
         android:layout_marginTop="20dp"
         android:padding="20dp"
         android:textColor="@color/black"
         android:background="@drawable/notice_border2"
-        android:drawableLeft="@drawable/message"
+        android:drawableLeft="@drawable/matching"
         />
 
     <TextView
         android:layout_width="350dp"
         android:layout_height="70dp"
-        android:text="   매칭 페이지로 이동합니다."
+        android:text="   게시판으로 이동합니다."
         android:textSize="20dp"
         android:gravity="center_vertical"
         android:layout_marginTop="20dp"
         android:padding="20dp"
         android:textColor="#FF000000"
         android:background="@drawable/notice_border2"
-        android:drawableLeft="@drawable/matching"
+        android:drawableLeft="@drawable/message"
         />
 
     <TextView
