@@ -91,7 +91,7 @@ public class QuestionActivity extends AppCompatActivity {
                 .child("UserAccount")
                 .child(mFirebaseAuth.getUid())
                 .updateChildren(data);
-        startActivity(new Intent(this, Main_page.class));
+        startActivity(new Intent(QuestionActivity.this, MainActivity.class));
         finishAffinity();
     }
 
