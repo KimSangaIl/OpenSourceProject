@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -77,8 +78,8 @@ public class LoginActivity extends AppCompatActivity{
         }
         );
 
-        Button btn_register = (Button) findViewById(R.id.btn_register);
-        btn_register.setOnClickListener((new View.OnClickListener()
+        TextView register = (TextView) findViewById(R.id.register);
+        register.setOnClickListener((new View.OnClickListener()
         {
             @Override
             public void onClick(View view)

@@ -18,21 +18,21 @@ import androidx.fragment.app.Fragment;
 
 public class matching_page extends AppCompatActivity {
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
-        View view = inflater.inflate(R.layout.fragment_matching_page, container, false);
+    //@Nullable
+    //@Override
+    //public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //setHasOptionsMenu(true);
+        //View view = inflater.inflate(R.layout.fragment_matching_page, container, false);
 
-        Button matching_start = view.findViewById(R.id.matching_start);
-        matching_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),matching_start_page.class);
-                startActivity(intent);
-            }
-        });
+        //Button matching_start = view.findViewById(R.id.matching_start);
+        //matching_start.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View view) {
+                //Intent intent = new Intent(getActivity(),matching_start_page.class);
+                //startActivity(intent);
+            //}
+        //});
 
-        return view;
-    }
+        //return view;
+    //}
 }

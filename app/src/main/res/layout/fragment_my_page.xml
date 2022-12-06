@@ -27,7 +27,7 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <android.widget.Button
+    <TextView
         android:id="@+id/logout"
         android:layout_width="50sp"
         android:layout_height="20sp"
