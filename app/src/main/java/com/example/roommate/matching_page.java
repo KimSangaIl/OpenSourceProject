@@ -1,3 +1,4 @@
+/*
 package com.example.roommate;
 
 import static androidx.databinding.DataBindingUtil.setContentView;
@@ -12,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.NonNull;import
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -36,3 +37,4 @@ public class matching_page extends AppCompatActivity {
         return view;
     }
 }
+*/
