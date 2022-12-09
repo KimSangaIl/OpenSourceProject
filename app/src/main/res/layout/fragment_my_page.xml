@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="top"
-    android:layout_margin="20dp"
-    android:orientation="vertical">
+    android:layout_margin="10dp">
 
     <ImageView
         android:id="@+id/profile"
@@ -27,112 +25,144 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <android.widget.Button
+    <TextView
         android:id="@+id/logout"
-        android:layout_width="50sp"
-        android:layout_height="20sp"
-        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
         android:layout_marginTop="35dp"
-        android:layout_toEndOf="@+id/name"
         android:gravity="center_vertical"
         android:text="로그아웃"
-        android:background="@drawable/empty_button"
+        android:textColor="@color/cbnu"
         android:textSize="13sp" />
 
     <TextView
-        android:id="@+id/info"
-        android:layout_width="80sp"
-        android:layout_height="30sp"
-        android:layout_below="@+id/profile"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="회원정보"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="150dp" />
 
-    <TextView
-        android:id="@+id/info_list"
-        android:layout_width="80sp"
-        android:layout_height="200sp"
-        android:layout_below="@+id/info"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
-        android:text="사용자\n성별\n생년월일\n기숙사\n룸메이트"
-        android:lineSpacingExtra ="15dp"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/cbnu"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:id="@+id/info_name"
-        android:layout_width="110sp"
-        android:layout_height="30sp"
-        android:layout_toEndOf="@+id/info_list"
-        android:layout_below="@+id/info"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
-        android:text="홍길동"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="3dp"
+        android:background="@drawable/cbnu_border">
 
-    <TextView
-        android:id="@+id/info_gender"
-        android:layout_width="110sp"
-        android:layout_height="30sp"
-        android:layout_toEndOf="@+id/info_list"
-        android:layout_below="@+id/info_name"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:text="남"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/info_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:lineSpacingExtra="15dp"
+            android:text="사용자\n성별\n생년월일\n기숙사\n룸메이트"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/info_birth"
-        android:layout_width="110sp"
-        android:layout_height="30sp"
-        android:layout_toEndOf="@+id/info_list"
-        android:layout_below="@+id/info_gender"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="13dp"
-        android:text="2000.11.11"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="262dp"
+            android:layout_marginStart="95dp"
+            android:background="@color/cbnu" />
 
-    <TextView
-        android:id="@+id/info_dormitory"
-        android:layout_width="110sp"
-        android:layout_height="30sp"
-        android:layout_toEndOf="@+id/info_list"
-        android:layout_below="@+id/info_birth"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="14dp"
-        android:text="양진재"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/info_name"
+            android:layout_width="110sp"
+            android:layout_height="30sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_toEndOf="@+id/info_list"
 
-    <TextView
-        android:id="@+id/info_roommate"
-        android:layout_width="110sp"
-        android:layout_height="30sp"
-        android:layout_toEndOf="@+id/info_list"
-        android:layout_below="@+id/info_dormitory"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="13dp"
-        android:text="김철수"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-    <android.widget.Button
-        android:id="@+id/edit_info"
-        android:layout_width="100sp"
-        android:layout_height="20sp"
-        android:layout_toEndOf="@+id/info_name"
-        android:layout_below="@+id/info"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="50dp"
-        android:text="회원정보 수정"
-        android:background="@drawable/empty_button"
-        android:textSize="13sp" />
+        <TextView
+            android:id="@+id/info_gender"
+            android:layout_width="110sp"
+            android:layout_height="30sp"
+            android:layout_below="@+id/info_name"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/info_list"
+            android:text="남"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/info_birth"
+            android:layout_width="110sp"
+            android:layout_height="30sp"
+            android:layout_below="@+id/info_gender"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/info_list"
+            android:text="2000.11.11"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/info_dormitory"
+            android:layout_width="110sp"
+            android:layout_height="30sp"
+            android:layout_below="@+id/info_birth"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="14dp"
+            android:layout_toEndOf="@+id/info_list"
+            android:text="양진재"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/info_roommate"
+            android:layout_width="110sp"
+            android:layout_height="30sp"
+            android:layout_below="@+id/info_dormitory"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/info_list"
+            android:text="김철수"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/edit_info"
+            android:layout_width="100sp"
+            android:layout_height="20sp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_toEndOf="@+id/info_name"
+            android:text="회원정보 수정"
+            android:textColor="@color/cbnu"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDel"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="550dp"
+        android:gravity="center"
+        android:text="회원탈퇴"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/cbnu_border"
+        android:backgroundTint="@color/cbnu"/>
 
 
 </RelativeLayout>
+
+
+
