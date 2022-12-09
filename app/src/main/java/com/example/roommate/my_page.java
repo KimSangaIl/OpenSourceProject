@@ -14,14 +14,21 @@ import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class my_page extends Fragment {
     private FirebaseAuth mAuth;
-    // private String uname;
-    // private String ugender;
-    // private String uage;
-    // private String udorm;
-    // private String umate;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mDatabaseRef;
+
+
 
     @Nullable
     @Override
@@ -34,10 +41,48 @@ public class my_page extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_my_page, container, false);
 
+        TextView UMName = (TextView)v.findViewById(R.id.name);
+        TextView uName = (TextView)v.findViewById(R.id.info_name);
+        TextView uGen = (TextView)v.findViewById(R.id.info_gender);
+        TextView uAge = (TextView)v.findViewById(R.id.info_birth);
+        TextView uDorm = (TextView)v.findViewById(R.id.info_dormitory);
+        TextView uRoommate = (TextView)v.findViewById(R.id.info_roommate);
+
         TextView logout = (TextView)v.findViewById(R.id.logout);
         Button userDel = (Button)v.findViewById(R.id.btnDel);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Roommate");
+
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
+
+        //상태창 변경
+        mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserAccount group = snapshot.getValue(UserAccount.class);
+
+                String gname = group.getName();
+                String ggen = group.getGen();
+                String gage = group.getAge();
+                String gdorm = group.getDorm();
+
+                UMName.setText(gname);
+                uName.setText(gname);
+                uGen.setText(ggen);
+                uAge.setText(gage);
+                uDorm.setText(gdorm);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         // 로그아웃
         logout.setOnClickListener(new View.OnClickListener() {

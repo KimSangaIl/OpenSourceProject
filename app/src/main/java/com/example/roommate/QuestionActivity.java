@@ -6,6 +6,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.roommate.databinding.ActivityQuestionBinding;
@@ -25,6 +26,10 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityQuestionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // 타이틀 바 내용 바꾸기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("문답표 작성하기");
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
@@ -86,7 +91,7 @@ public class QuestionActivity extends AppCompatActivity {
                 .child("UserAccount")
                 .child(mFirebaseAuth.getUid())
                 .updateChildren(data);
-        startActivity(new Intent(this, Main_page.class));
+        startActivity(new Intent(QuestionActivity.this, MainActivity.class));
         finishAffinity();
     }
 

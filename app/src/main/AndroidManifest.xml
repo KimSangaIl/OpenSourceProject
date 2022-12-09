@@ -42,7 +42,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".QuestionActivity" />
-        <activity android:name=".Main_page" />
         <activity android:name=".matching_page" />
     </application>
 
