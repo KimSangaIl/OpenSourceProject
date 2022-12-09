@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new Main_page();
             }
             else if (id == R.id.navigation_2){
-                fragment = new Main_page();
+                fragment = new matching_page();
             }
             else if (id == R.id.navigation_3){
                 fragment = new message_page();

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="룸메이트 정보"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:textSize="25dp"></TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#EAD4DA"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/userimage"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/my" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="사용자 이름"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"></LinearLayout>
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:text="홍길동"></TextView>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"></LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="성별"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"></LinearLayout>
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:text="남/여"></TextView>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"></LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="기숙사"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"></LinearLayout>
+            <TextView
+                android:id="@+id/dormitory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:text="양진재/양성재/개성재"></TextView>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="지켜줬으면 하는 점"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"></LinearLayout>
+            <TextView
+                android:id="@+id/requestpoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:text="잠을 충분히 자야하는 스타일이라 저와 수면패턴이 비슷했으면 좋겠습니다."></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></LinearLayout>
+
+    <View
+        android:layout_width="450dp"
+        android:layout_height="1dp"
+        android:background="@color/black"></View>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp">
+
+        <ScrollView
+            android:id="@+id/scrolluser"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fillViewport="true">
+
+            <ListView
+                android:layout_width="375dp"
+                android:layout_height="20dp"></ListView>
+        </ScrollView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#EAD4DA"
+        android:text="룸메이트 매칭하기"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"></Button>
+
+
+</LinearLayout>
