@@ -7,15 +7,22 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class matching_start extends AppCompatActivity {
 
     private Button matching_start;
-    @Override
 
+    private ArrayList<UserAccount> data = null;
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching_start);
@@ -29,5 +36,23 @@ public class matching_start extends AppCompatActivity {
             }
         });
 
+        ListView listView = (ListView) findViewById(R.id.listview);
+
+        data = new ArrayList<>();
+
+        UserAccount user1 = new UserAccount();
+        data.add(user1);
+
+        listview_adapter adapter = new listview_adapter(this, R.layout.user_listview, data);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), matching_result.class);
+                intent.putExtra("name", data.get(position).getName());
+                startActivity(intent);
+            }
+        });
     }
 }
