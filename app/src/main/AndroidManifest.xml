@@ -44,6 +44,8 @@
         <activity android:name=".QuestionActivity" />
         <activity android:name=".matching_page" />
         <activity android:name=".matching_start2" />
+        <activity android:name=".ApplyActivity"
+            android:parentActivityName="."/>
     </application>
 
 </manifest>
