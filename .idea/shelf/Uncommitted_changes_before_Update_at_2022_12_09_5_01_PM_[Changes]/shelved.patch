@@ -1,0 +1,93 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\">\n\n    <application\n        android:allowBackup=\"true\"\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\n        android:fullBackupContent=\"@xml/backup_rules\"\n        android:icon=\"@drawable/cbnu_logo_wapen\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@drawable/cbnu_logo_wapen\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.Roommate\"\n        tools:targetApi=\"31\">\n        <activity\n            android:name=\".matching_start\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".MainActivity\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".IntroActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity android:name=\".LoginActivity\" />\n        <activity android:name=\".RegisterActivity\" />\n        <activity android:name=\".QuestionActivity\" />\n        <activity android:name=\".Main_page\" />\n        <activity android:name=\".matching_page\" />\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 27fb92479575d7e7fd31e0e315f1e7535fe986c9)
++++ b/app/src/main/AndroidManifest.xml	(date 1670572061049)
+@@ -44,6 +44,7 @@
+         <activity android:name=".QuestionActivity" />
+         <activity android:name=".Main_page" />
+         <activity android:name=".matching_page" />
++        <activity android:name=".matching_start2" />
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/example/roommate/matching_start.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.roommate;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\n\npublic class matching_start extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_matching_start);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/roommate/matching_start.java b/app/src/main/java/com/example/roommate/matching_start.java
+--- a/app/src/main/java/com/example/roommate/matching_start.java	(revision 27fb92479575d7e7fd31e0e315f1e7535fe986c9)
++++ b/app/src/main/java/com/example/roommate/matching_start.java	(date 1670572645857)
+@@ -1,14 +1,33 @@
+ package com.example.roommate;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+-
++import androidx.fragment.app.Fragment;
++import androidx.fragment.app.FragmentManager;
++import androidx.fragment.app.FragmentTransaction;
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
+ import android.os.Bundle;
++import android.view.MenuItem;
+ 
+ public class matching_start extends AppCompatActivity {
+ 
++    private Button matching_start;
+     @Override
++
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_matching_start);
++
++        matching_start=findViewById(R.id.matching_start);
++        matching_start.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                Intent intent=new Intent(matching_start.this, matching_start2.class);
++                startActivity(intent);
++            }
++        });
++
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/roommate/matching_start2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/roommate/matching_start2.java b/app/src/main/java/com/example/roommate/matching_start2.java
+new file mode 100644
+--- /dev/null	(date 1670572781808)
++++ b/app/src/main/java/com/example/roommate/matching_start2.java	(date 1670572781808)
+@@ -0,0 +1,17 @@
++package com.example.roommate;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++import android.widget.Button;
++
++public class matching_start2 extends AppCompatActivity {
++
++    private Button btn_matching_start;
++    @Override
++
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.matching_page2);
++    }
++}
+\ No newline at end of file
