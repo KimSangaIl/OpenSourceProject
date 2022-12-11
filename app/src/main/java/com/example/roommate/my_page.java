@@ -27,7 +27,7 @@ public class my_page extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDatabase;
     private DatabaseReference mDatabaseRef;
-
+    private Button btnListMate;
 
 
     @Nullable
@@ -41,6 +41,7 @@ public class my_page extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_my_page, container, false);
 
+
         TextView UMName = (TextView)v.findViewById(R.id.name);
         TextView uName = (TextView)v.findViewById(R.id.info_name);
         TextView uGen = (TextView)v.findViewById(R.id.info_gender);
@@ -50,12 +51,14 @@ public class my_page extends Fragment {
 
         TextView logout = (TextView)v.findViewById(R.id.logout);
         Button userDel = (Button)v.findViewById(R.id.btnDel);
+        Button goList = (Button)v.findViewById(R.id.btnListMate);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Roommate");
 
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
 
 
         //상태창 변경
@@ -90,6 +93,17 @@ public class my_page extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finish();//현재 액티비티 파괴
+            }
+        });
+
+        //룸메이트 신청 목록 보기
+        goList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(), ApplyActivity.class);
                 startActivity(intent);
                 getActivity().finish();//현재 액티비티 파괴
             }
