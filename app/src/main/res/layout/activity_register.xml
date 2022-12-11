@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="생년월일"
+                android:text="나이"
                 android:textColor="@color/cbnu"
                 android:textSize="20dp" />
 

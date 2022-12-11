@@ -34,6 +34,15 @@ public class matching_page extends Fragment {
             }
         });
 
+        Button btn_refuse = (Button) view.findViewById(R.id.matching_refuse);
+        btn_refuse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
     @Override
