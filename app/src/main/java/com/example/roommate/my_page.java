@@ -102,10 +102,8 @@ public class my_page extends Fragment {
         goList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), ApplyActivity.class);
                 startActivity(intent);
-                getActivity().finish();//현재 액티비티 파괴
             }
         });
 
