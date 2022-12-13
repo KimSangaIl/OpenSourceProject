@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_marginTop="200dp"
+    android:layout_marginLeft="50dp"
+    android:background="@drawable/cbnu_border">
+
+    <TextView
+        android:id="@+id/info_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:lineSpacingExtra="15dp"
+        android:text="사용자\n성별\n나이\n기숙사\n룸메이트"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/eidtName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="22dp" />
+
+    <EditText
+        android:id="@+id/eidtSex"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="66dp"
+        android:layout_marginLeft="80dp" />
+    <EditText
+        android:id="@+id/eidtAgr"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="80dp" />
+    <EditText
+        android:id="@+id/eidtDorm"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="154dp"
+        android:layout_marginLeft="80dp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/btnOK"
+        android:text="수정하기"
+        android:background="@drawable/cbnu_border"
+        android:backgroundTint="@color/cbnu"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
