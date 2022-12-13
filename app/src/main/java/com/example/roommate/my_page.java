@@ -1,5 +1,7 @@
 package com.example.roommate;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +56,7 @@ public class my_page extends Fragment {
         TextView uRoommate = (TextView)v.findViewById(R.id.info_roommate);
 
         TextView logout = (TextView)v.findViewById(R.id.logout);
+        TextView editInfo = (TextView)v.findViewById(R.id.edit_info);
         Button userDel = (Button)v.findViewById(R.id.btnDel);
         Button goList = (Button)v.findViewById(R.id.btnListMate);
 
@@ -99,6 +103,16 @@ public class my_page extends Fragment {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 getActivity().finish();//현재 액티비티 파괴
+            }
+        });
+
+        // 회원정보 수정
+        editInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CustomDialog oDialog = new CustomDialog(getActivity());
+                oDialog.setCancelable(false);
+                oDialog.show();
             }
         });
 
@@ -150,5 +164,45 @@ public class my_page extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+    }
+    public class CustomDialog extends Dialog
+    {
+        CustomDialog m_oDialog;
+        public CustomDialog(Context context)
+        {
+            super(context, android.R.style.Theme_Translucent_NoTitleBar);
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState)
+        {
+            super.onCreate(savedInstanceState);
+
+            WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
+            lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            lpWindow.dimAmount = 0.5f;
+            getWindow().setAttributes(lpWindow);
+
+            setContentView(R.layout.custom_dialog);
+
+            m_oDialog = this;
+
+            TextView oView = (TextView) this.findViewById(R.id.textView);
+
+            Button oBtn = (Button)this.findViewById(R.id.btnOK);
+            oBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    onClickBtn(v);
+                }
+            });
+        }
+
+        public void onClickBtn(View _oView)
+        {
+            this.dismiss();
+        }
     }
 }
