@@ -1,16 +1,20 @@
 package com.example.roommate;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +32,6 @@ public class my_page extends Fragment {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mDatabaseRef;
     private Button btnListMate;
-
 
     @Nullable
     @Override
@@ -77,8 +80,6 @@ public class my_page extends Fragment {
                 uGen.setText(ggen);
                 uAge.setText(gage);
                 uDorm.setText(gdorm);
-
-
             }
 
             @Override
@@ -91,6 +92,9 @@ public class my_page extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast toast = Toast.makeText(getActivity(), "로그아웃 되었습니다.",Toast.LENGTH_SHORT);
+                toast.show();
+
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
@@ -111,10 +115,32 @@ public class my_page extends Fragment {
         userDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.getCurrentUser().delete();
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-                getActivity().finish();//현재 액티비티 파괴
+                AlertDialog.Builder Dialog = new AlertDialog.Builder(getActivity(),
+                        android.R.style.Theme_DeviceDefault_Light_Dialog);
+                Dialog.setMessage("정말 탈퇴 하시겠습니까?")
+                        .setPositiveButton("아니오", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                Log.i("Dialog", "취소");
+                            }
+                        })
+                        .setNegativeButton("예", new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                Toast toast = Toast.makeText(getActivity(), "탈퇴 되었습니다.",Toast.LENGTH_SHORT);
+                                toast.show();
+
+                                mAuth.getCurrentUser().delete();
+                                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                                startActivity(intent);
+                                getActivity().finish();//현재 액티비티 파괴
+                            }
+                        })
+                        .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
+                        .show();
             }
         });
 
